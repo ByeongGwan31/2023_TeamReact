@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.movie-container {
+  text-align: center;
+}
+
+footer {
+  background-color: #d1d1d1;
+  color: #FFF;
+  padding: 20px;
+  width: auto;
+  height: 400px;
+  text-align: center;
+}
