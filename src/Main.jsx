@@ -29,8 +29,8 @@ function App() {
         <p>Loading...</p>
       ) : (
         <div>
-          <Scroll movieCd = {movies[2].movieCd} ></Scroll>
-          {/* <div style={{ border: '1px red solid', padding: 30 }}>
+          
+          {/* <div className="movie-info" style={{ border: '1px red solid', padding: 30 }}>
             <h3>{movies[0].movieNm}</h3>
             <p>누적 관객 수: {movies[0].audiAcc}명</p>
             <p>영화 개봉일: ({movies[0].openDt})</p>
@@ -42,13 +42,17 @@ function App() {
             <p>누적 관객 수: {movies[1].audiAcc}명</p>
             <p>영화 개봉일: ({movies[1].openDt})</p>
             <p>영화 코드: ({movies[1].movieCd})</p>
+            <button> Scroll 컴포넌트로 movies[1].movieCd를 전달하고 페이지를 이동</button>
           </div>  
           <div style={{ border: '1px red solid', padding: 30 }}>
             <h3>{movies[2].movieNm}</h3>
             <p>누적 관객 수: {movies[2].audiAcc}명</p>
             <p>영화 개봉일: ({movies[2].openDt})</p>
             <p>영화 코드: ({movies[2].movieCd})</p>
+            <button> Scroll 컴포넌트로 movies[2].movieCd를 전달하고 페이지를 이동</button>
           </div> */}
+          
+          <Scroll movieCd = {movies[0].movieCd} ></Scroll>
         </div>
       )}
     </div>

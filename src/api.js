@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Movie2Info from "./Movie2Info";
-import MovieInfo from "./MovieInfo";
 
 function Api() {
   const KEY = "da2c2d33b02a2d73a27241cb4592a5a1";

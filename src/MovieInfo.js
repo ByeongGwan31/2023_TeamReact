@@ -5,21 +5,19 @@ class MovieInfo extends Component {
         const { movie } = this.props;
 
         if (!movie) {
-          // movie 객체가 없는 경우 렌더링하지 않음
           return null;
         }       
         
         return (
             <div className="movie-info">
-              <br></br>
-              <h2>영화 정보</h2>
               <ul>
-                <li><strong>제목:{movie.movieNm}</strong></li>
-                <li><strong>장르:{movie.genres[0].genreNm}</strong></li>
-                <li><strong>감독:{movie.directors[0].peopleNm}</strong></li>
-                <li><strong>출연:{movie.actors.map((actor) => actor.peopleNm).join(", ")}</strong></li>
-                <li><strong>개봉일:{movie.openDt}</strong></li>
-                <li><strong>평점:{movie.movieNm}</strong></li>
+                <h3>제목 : {movie.movieNm}</h3>
+                <p>장르 : <strong>{movie.genres[0].genreNm}</strong></p>
+                <p>감독 : <strong>{movie.directors[0].peopleNm}</strong></p>
+                <p>출연 : <strong>{movie.actors.slice(0, 5).map((actor) => actor.peopleNm).join(", ")}{movie.actors.length > 5 && " 외 " + (movie.actors.length - 5) + "명"}</strong></p>
+                <p>개봉일 : <strong>{movie.openDt}</strong></p>
+                <p>평점 : <strong>{movie.movieNm}</strong></p>
+                <p>상영시간 : <strong>{movie.showTm}분</strong></p>
               </ul>
             </div>
           );
