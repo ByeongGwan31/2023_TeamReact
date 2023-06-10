@@ -9,7 +9,7 @@ const MovieInfo = ({movies, selectedMovieId, changeMovie}) => {
             if (movie.id === selectedMovieId) {
 
               return (
-                <div key={movie.id} className="movie-container">
+                <div key={movie.id} className="movie-container" style={{flext: 1, border: "1px blue solid", padding: 30, margin: 10}}>
                   <img src={movie.image} alt={movie.title} />
                   <h2 className="movie-title">{movie.title}</h2>
                   <h3><strong>장르 : </strong>{movie.genre}</h3>
@@ -19,12 +19,12 @@ const MovieInfo = ({movies, selectedMovieId, changeMovie}) => {
                   <p><strong>평점 : </strong>{movie.rating}</p>
                   <p><strong>출연진 : </strong> {movie.cast}</p>
                   </div>
-                </div>
+                </div>  
               );
             } else {
                 return null;
               }
-            })}
+            })}.
           </div>
         );
   };
