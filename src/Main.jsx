@@ -1,42 +1,57 @@
 import { useState, useEffect } from "react";
-import Main from "./Main";
+import InfoAPI from './InfoAPI'; 
+import Scroll from "./Scroll";
+
 function App() {
   const KEY = "da2c2d33b02a2d73a27241cb4592a5a1";
   const DATE = "25023022";
-  const PERPAGE = "5";
 
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
+
   const getMovies = async () => {
     const json = await (
       await fetch(
-        `http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${KEY}&targetDt=${DATE}&itemPerPage=${PERPAGE}`
+        `http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${KEY}&targetDt=${DATE}&itemPerPage=3`
       )
     ).json();
     setMovies(json.boxOfficeResult.dailyBoxOfficeList);
     setLoading(false);
   };
+
   useEffect(() => {
     getMovies();
   }, []);
-  
-  return (
-    <div style={{ display: "flex", flexWrap: "wrap" }}>
-  {movies.map((movie, idx) => (
-    <div key={movie.rank} style={{ flex: 1, border: "1px blue solid", padding: 30, margin: 10 }}>
-      <p>{`${idx + 1}위. ${movie.movieNm}`}</p>
-      <p>{`누적 관객 수 : ${movie.audiAcc}명`}</p>
-      <p>{`영화 개봉일 : (${movie.openDt})`}</p>
-      <p>{`영화 코드 : (${movie.movieCd})`}</p>
-      <button
-       style={{ width: 250, height: 50, fontsize: 15 }}
-       onClick={() => console.log(`영화 코드 ${movie.movieCd}가 클릭 완료!`)}>
-       영화 확인
-      </button>
-    </div>
-  ))}
-</div>
 
+  return (
+    <div>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div>
+          <Scroll movieCd = {movies[2].movieCd} ></Scroll>
+          {/* <div style={{ border: '1px red solid', padding: 30 }}>
+            <h3>{movies[0].movieNm}</h3>
+            <p>누적 관객 수: {movies[0].audiAcc}명</p>
+            <p>영화 개봉일: ({movies[0].openDt})</p>
+            <p>영화 코드: ({movies[0].movieCd})</p>
+            <button> Scroll 컴포넌트로 movies[0].movieCd를 전달하고 페이지를 이동</button>
+          </div>
+          <div style={{ border: '1px red solid', padding: 30 }}>
+            <h3>{movies[1].movieNm}</h3>
+            <p>누적 관객 수: {movies[1].audiAcc}명</p>
+            <p>영화 개봉일: ({movies[1].openDt})</p>
+            <p>영화 코드: ({movies[1].movieCd})</p>
+          </div>  
+          <div style={{ border: '1px red solid', padding: 30 }}>
+            <h3>{movies[2].movieNm}</h3>
+            <p>누적 관객 수: {movies[2].audiAcc}명</p>
+            <p>영화 개봉일: ({movies[2].openDt})</p>
+            <p>영화 코드: ({movies[2].movieCd})</p>
+          </div> */}
+        </div>
+      )}
+    </div>
   );
 }
 

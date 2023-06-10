@@ -1,32 +1,29 @@
-import React from 'react';
-import "./MovieInfo.css";
+import React, { Component } from 'react';
 
-const MovieInfo = ({movies, selectedMovieId, changeMovie}) => {
-  
-    return (
-        <div className="container">
-          {movies.map((movie) => {
-            if (movie.id === selectedMovieId) {
+class MovieInfo extends Component {
+    render() {
+        const { movie } = this.props;
 
-              return (
-                <div key={movie.id} className="movie-container" style={{flext: 1, border: "1px blue solid", padding: 30, margin: 10}}>
-                  <img src={movie.image} alt={movie.title} />
-                  <h2 className="movie-title">{movie.title}</h2>
-                  <h3><strong>장르 : </strong>{movie.genre}</h3>
-                  <div className="dasd">
-                  <p>{movie.synopsis.split('\n').map((line, index) => <React.Fragment key={index}>{line}<br /></React.Fragment>)}</p>
-                  <p><strong>상영 시간 : </strong>{movie.duration}</p>
-                  <p><strong>평점 : </strong>{movie.rating}</p>
-                  <p><strong>출연진 : </strong> {movie.cast}</p>
-                  </div>
-                </div>  
-              );
-            } else {
-                return null;
-              }
-            })}.
-          </div>
-        );
-  };
+        if (!movie) {
+          // movie 객체가 없는 경우 렌더링하지 않음
+          return null;
+        }       
+        
+        return (
+            <div className="movie-info">
+              <br></br>
+              <h2>영화 정보</h2>
+              <ul>
+                <li><strong>제목:{movie.movieNm}</strong></li>
+                <li><strong>장르:{movie.genres[0].genreNm}</strong></li>
+                <li><strong>감독:{movie.directors[0].peopleNm}</strong></li>
+                <li><strong>출연:{movie.actors.map((actor) => actor.peopleNm).join(", ")}</strong></li>
+                <li><strong>개봉일:{movie.openDt}</strong></li>
+                <li><strong>평점:{movie.movieNm}</strong></li>
+              </ul>
+            </div>
+          );
+    }
+}
 
 export default MovieInfo;
