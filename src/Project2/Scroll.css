@@ -1,0 +1,45 @@
+.scroll-button {
+  position: fixed;
+  top: 65px;
+  right: 20px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  color: #333;
+  text-decoration: none;
+}
+.scroll-button2 {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+  }
+.scroll-button3 {
+    position: fixed;
+    top: 110px;
+    right: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+  }
+  .scroll-button4 {
+    position: fixed;
+    top: 155px;
+    right: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+  }
+  .scroll-button5 {
+    position: fixed;
+    top: 200px;
+    right: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+  }

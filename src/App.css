@@ -1,19 +1,17 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
 
-.movie-container {
+
+
+div {
+  background-color: rgb(162, 127, 243);
+  color: rgb(255, 255, 255);
+  padding: 40px;
+  font-family: 고딕;
   text-align: center;
 }
 
-footer {
-  background-color: #d1d1d1;
-  color: #FFF;
-  padding: 20px;
-  width: auto;
-  height: 400px;
-  text-align: center;
+h1 {
+  color: white;
+  background-color: #2EFE2E;
+  padding: 10px;
+  font-family: 궁서;
 }
